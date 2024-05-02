@@ -13,7 +13,7 @@ export const handler: Handler = async (
 
   return {
     statusCode: 200,
-    body: JSON.parse(response),
+    body: JSON.stringify(response),
     headers: {
       Context: "application/json",
       "Access-Control-Allow-Origin": "*",
