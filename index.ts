@@ -6,13 +6,14 @@ import {
 } from "aws-lambda";
 import OpenAI from "openai";
 
-let key = "";
 export const handler: Handler = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResultV2> => {
+  const response = await getWord();
+
   return {
     statusCode: 200,
-    body: JSON.stringify(getWord()),
+    body: JSON.stringify(response),
     headers: {
       Context: "application/json",
       "Access-Control-Allow-Origin": "*",
