@@ -21,7 +21,8 @@ jobs:
           aws-region: us-east-2
       - name: npm install
         env:
-          CI: true
+          CI: true,
+          API_KEY: ${{ secrets.OPENAI_ACCESS_KEY_ID }}
         run: |
           npm ci
       - name: deploy
