@@ -22,7 +22,7 @@ jobs:
       - name: npm install
         env:
           CI: true,
-          API_KEY: ${{ secrets.OPENAI_ACCESS_KEY_ID }}
+          OPENAI_ACCESS_KEY_ID: ${{ secrets.OPENAI_ACCESS_KEY_ID }}
         run: |
           npm ci
       - name: deploy
